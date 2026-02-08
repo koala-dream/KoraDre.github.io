@@ -1109,7 +1109,7 @@ pre code {
 }
 .site-title {
   font-family: LXGW WenKai TC, Noto Sans Simplified Chinese, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1.375em;
+  font-size: 30px;
   font-weight: normal;
   line-height: 1.5;
   margin: 0;
@@ -1188,7 +1188,7 @@ pre code {
 .menu-item a {
   border-bottom: 0;
   display: block;
-  font-size: 0.8125em;
+  font-size: 18px;
   transition: border-color 0.2s ease-in-out;
 }
 .menu-item a:hover,
@@ -1279,7 +1279,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #811312;
+    background: #7940ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
