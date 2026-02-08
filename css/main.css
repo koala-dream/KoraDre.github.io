@@ -1279,7 +1279,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffcdab;
+    background: #811312;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1533,11 +1533,12 @@ pre code {
 .site-author-name {
   color: var(--text-color);
   font-weight: 600;
+  font-size: 16px;
   margin: 0;
 }
 .site-description {
   color: #999;
-  font-size: 0.8125em;
+  font-size: 16px;
   margin-top: 0;
 }
 .site-state {
@@ -1685,12 +1686,6 @@ pre code {
   color: #f00;
   display: inline-block;
   margin: 0 5px;
-}
-.busuanzi-count #busuanzi_container_site_uv {
-  display: none;
-}
-.busuanzi-count #busuanzi_container_site_pv {
-  display: none;
 }
 @keyframes icon-animate {
   0%, 100% {
@@ -2597,7 +2592,7 @@ mark.search-keyword {
 }
 header.header {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 30px 30px 30px 30px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 @media (max-width: 991px) {
@@ -2634,9 +2629,9 @@ header.header {
   }
 }
 .main-inner {
-  border-radius: initial;
+  border-radius: 30px 30px 30px 30px;
   box-sizing: border-box;
-  width: calc(100% - 252px);
+  width: calc(100% - 232px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2645,7 +2640,7 @@ header.header {
   }
 }
 .footer-inner {
-  padding-left: 252px;
+  padding-left: 232px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2655,7 +2650,7 @@ header.header {
   }
 }
 .column {
-  width: 240px;
+  width: 220px;
 }
 @media (max-width: 991px) {
   .column {
@@ -2769,7 +2764,7 @@ header.header {
   }
   .sidebar-inner {
     background: var(--content-bg-color);
-    border-radius: initial;
+    border-radius: 30px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
     color: var(--text-color);
@@ -2830,11 +2825,11 @@ header.header {
 .main-inner .comment-position .comments,
 .main-inner .pagination {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 30px 30px 30px 30px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .main-inner .post-block:not(:first-child):not(:first-child) {
-  border-radius: initial;
+  border-radius: 30px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2852,7 +2847,7 @@ header.header {
 .main-inner > .comments,
 .main-inner .comment-position .comments,
 .main-inner .pagination {
-  border-radius: initial;
+  border-radius: 30px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }

@@ -19,19 +19,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-center-atom.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":220,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)(1)     IIC使用SCL和SDA两根线，SCL用于同步，SDA负责数据传输 (2)    是半双工机制（主从机之间不能同时传输数据。） (3)    IIC是多主多从的协议 (4)    地址寻址可以要么7位地址，要么10位地址 🔴 重要内容">
+    <meta name="description" content="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I2C基础知识">
 <meta property="og:url" content="https://example.com/2026/01/26/2026-1-26-I2C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Koala&#39;s blogs">
-<meta property="og:description" content="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)(1)     IIC使用SCL和SDA两根线，SCL用于同步，SDA负责数据传输 (2)    是半双工机制（主从机之间不能同时传输数据。） (3)    IIC是多主多从的协议 (4)    地址寻址可以要么7位地址，要么10位地址 🔴 重要内容">
+<meta property="og:description" content="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://example.com/images/lubancat2(v1-v2)%E5%BC%95%E8%84%9A%E5%9B%BE.png">
 <meta property="article:published_time" content="2026-01-26T04:25:10.000Z">
-<meta property="article:modified_time" content="2026-02-06T16:06:20.664Z">
-<meta property="article:author" content="考拉梦">
+<meta property="article:modified_time" content="2026-02-08T13:36:35.081Z">
+<meta property="article:author" content="考拉">
 <meta property="article:tag" content="I2C">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://example.com/images/lubancat2(v1-v2)%E5%BC%95%E8%84%9A%E5%9B%BE.png">
@@ -68,7 +68,6 @@
 
 
   
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
@@ -100,7 +99,7 @@
       <p class="site-title">Koala's blogs</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">学不死就往死里学</p>
+      <p class="site-subtitle" itemprop="description">稳定下来后，要好好变强，强到能应对即将到来的危机...</p>
   </div>
 
   <div class="site-nav-right">
@@ -170,10 +169,10 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="考拉梦"
+    <img class="site-author-image" itemprop="image" alt="考拉"
       src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">考拉梦</p>
-  <div class="site-description" itemprop="description">爱学习，爱进步</div>
+  <p class="site-author-name" itemprop="name">考拉</p>
+  <div class="site-description" itemprop="description">山雾之中，有一个老头在磨石，孤零零的，一个人</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
@@ -185,12 +184,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -229,12 +228,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="考拉梦">
+      <meta itemprop="name" content="考拉">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Koala's blogs">
-      <meta itemprop="description" content="爱学习，爱进步">
+      <meta itemprop="description" content="山雾之中，有一个老头在磨石，孤零零的，一个人">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -261,7 +260,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-02-07 00:06:20" itemprop="dateModified" datetime="2026-02-07T00:06:20+08:00">2026-02-07</time>
+      <time title="修改时间：2026-02-08 21:36:35" itemprop="dateModified" datetime="2026-02-08T21:36:35+08:00">2026-02-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -297,14 +296,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="简述I2C总线的基本原理。-提示：两线制、同步、半双工、多主多从、地址寻址"><a href="#简述I2C总线的基本原理。-提示：两线制、同步、半双工、多主多从、地址寻址" class="headerlink" title="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)"></a><em>简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)</em></h1><p>(1)     IIC使用SCL和SDA两根线，SCL用于同步，SDA负责数据传输</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="简述I2C总线的基本原理。-提示：两线制、同步、半双工、多主多从、地址寻址"><a href="#简述I2C总线的基本原理。-提示：两线制、同步、半双工、多主多从、地址寻址" class="headerlink" title="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)"></a><em>简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)</em></h1><span id="more"></span>
+
+<p>(1)     IIC使用SCL和SDA两根线，SCL用于同步，SDA负责数据传输</p>
 <p>(2)    是半双工机制（主从机之间不能同时传输数据。）</p>
 <p>(3)    IIC是多主多从的协议</p>
 <p>(4)    地址寻址可以要么7位地址，要么10位地址</p>
 <p><span style="color: #ff4444; font-size: 24px;">🔴 重要内容</span></p>
 <p><img src="/../images/lubancat2(v1-v2)%E5%BC%95%E8%84%9A%E5%9B%BE.png"></p>
-<span id="more"></span>
-
 <h1 id="为什么I2C总线需要上拉电阻？其阻值如何选择？"><a href="#为什么I2C总线需要上拉电阻？其阻值如何选择？" class="headerlink" title="为什么I2C总线需要上拉电阻？其阻值如何选择？"></a>为什么I2C总线需要上拉电阻？其阻值如何选择？</h1><p>(1)    因为需要实现多从机的机制，IIC的引脚需要使用开漏模式挂载到IIC总线上，开漏模式下的高电平由上拉电阻实现。如果不使用开漏输出模式，当主机访问从机1时，从机1拉低总线电平，而从机2会输出高电平，表示不应答，但是这样的话，会使得总线短路。开漏模式下，从机2释放总线（输出高阻态），不会影响到从机1的拉低，因为上拉电阻的存在，总线不会短路。</p>
 <p>(2)    根据IIC协议的速度需求选择阻值</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">power_supply_config</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">device_node</span> *<span class="title">of_node</span>;</span>  <span class="comment">// 设备节点</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">fwnode_handle</span> *<span class="title">fwnode</span>;</span> <span class="comment">// fwnode 节点</span></span><br><span class="line"></span><br><span class="line">    <span class="type">void</span> *drv_data; <span class="comment">// 私有数据</span></span><br><span class="line"></span><br><span class="line">    <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">attribute_group</span> **<span class="title">attr_grp</span>;</span> <span class="comment">// 私有的属性节点</span></span><br><span class="line"></span><br><span class="line">    <span class="type">char</span> **supplied_to;  <span class="comment">// 一个字符串数组, 保存了该 psy 向下一级供电的 psy 列表. 组织 psy 之间的级联方向.</span></span><br><span class="line">    <span class="type">size_t</span> num_supplicants;</span><br><span class="line"></span><br><span class="line">    ANDROID_KABI_RESERVE(<span class="number">1</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -338,8 +337,8 @@
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/2026/02/07/usb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="next" title="">
-                   <i class="fa fa-angle-right"></i>
+                <a href="/2026/02/05/usb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="next" title="USB基础知识">
+                  USB基础知识 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -364,26 +363,8 @@
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
-    <span class="author" itemprop="copyrightHolder">考拉梦</span>
+    <span class="author" itemprop="copyrightHolder">考拉</span>
   </div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
