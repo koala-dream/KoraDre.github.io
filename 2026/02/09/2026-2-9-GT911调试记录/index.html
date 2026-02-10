@@ -21,25 +21,38 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":220,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"vs","dark":"vs"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="山雾之中，有一个老头在磨石，孤零零的，一个人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Koala&#39;s blogs">
-<meta property="og:url" content="https://example.com/index.html">
+    <meta name="description" content="GT911重要寄存器控制寄存器：0x8040 配置寄存器（组）：0x8047-0x8100 状态寄存器：0x814E 坐标寄存器（组）：0x8150-0x8177 硬件设施准备通过命令行输入 i2cdetect -y 1 ，可以检测i2c1总线下所有设备的设备地址 鲁班猫2上触摸屏接口 中断引脚是GPIO0_B5 复位引脚是GPIO0_B6  对GT911的操作方法 读操作时序图，高位先行，低位在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GT911在RK3568上的调试记录">
+<meta property="og:url" content="https://example.com/2026/02/09/2026-2-9-GT911%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Koala&#39;s blogs">
-<meta property="og:description" content="山雾之中，有一个老头在磨石，孤零零的，一个人">
+<meta property="og:description" content="GT911重要寄存器控制寄存器：0x8040 配置寄存器（组）：0x8047-0x8100 状态寄存器：0x814E 坐标寄存器（组）：0x8150-0x8177 硬件设施准备通过命令行输入 i2cdetect -y 1 ，可以检测i2c1总线下所有设备的设备地址 鲁班猫2上触摸屏接口 中断引脚是GPIO0_B5 复位引脚是GPIO0_B6  对GT911的操作方法 读操作时序图，高位先行，低位在">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://example.com/images/QQ_1770626077492.png">
+<meta property="og:image" content="https://example.com/images/image-20260209121610785.png">
+<meta property="og:image" content="https://example.com/images/image20260209103143681.png">
+<meta property="og:image" content="https://example.com/images/QQ_1770629287737.png">
+<meta property="og:image" content="https://example.com/images/image-20260210094948586.png">
+<meta property="og:image" content="https://example.com/images/QQ_1770688323297.png">
+<meta property="og:image" content="https://example.com/images%5Cimage-20260209231014227.png">
+<meta property="og:image" content="https://example.com/images%5Cimage-20260209231105293.png">
+<meta property="og:image" content="https://example.com/2026/02/09/images/89656ed88d1429a0269da6c95307b599.png">
+<meta property="og:image" content="https://example.com/2026/02/09/images/ee6bce70b3cca6b9ee704f9ad5332714.png">
+<meta property="article:published_time" content="2026-02-09T03:34:10.000Z">
+<meta property="article:modified_time" content="2026-02-10T08:47:57.724Z">
 <meta property="article:author" content="考拉">
-<meta property="article:tag" content="Linux驱动开发，RTOS，Makefile">
+<meta property="article:tag" content="I2C">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://example.com/images/QQ_1770626077492.png">
 
 
-<link rel="canonical" href="https://example.com/">
+<link rel="canonical" href="https://example.com/2026/02/09/2026-2-9-GT911%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://example.com/2026/02/09/2026-2-9-GT911%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/","path":"2026/02/09/2026-2-9-GT911调试记录/","title":"GT911在RK3568上的调试记录"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Koala's blogs</title>
+<title>GT911在RK3568上的调试记录 | Koala's blogs</title>
   
 
 
@@ -92,7 +105,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Koala's blogs</h1>
+      <p class="site-title">Koala's blogs</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">稳定下来后，要好好变强，强到能应对即将到来的危机...</p>
@@ -146,7 +159,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -159,6 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GT911%E9%87%8D%E8%A6%81%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">GT911重要寄存器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E8%AE%BE%E6%96%BD%E5%87%86%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">硬件设施准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9GT911%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">对GT911的操作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E6%93%8D%E4%BD%9C%E6%97%B6%E5%BA%8F%E5%9B%BE%EF%BC%8C%E9%AB%98%E4%BD%8D%E5%85%88%E8%A1%8C%EF%BC%8C%E4%BD%8E%E4%BD%8D%E5%9C%A8%E5%90%8E"><span class="nav-number">3.1.</span> <span class="nav-text">读操作时序图，高位先行，低位在后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99i2c%E9%80%9A%E4%BF%A1%E6%A1%86%E6%9E%B6%EF%BC%8C%E8%83%BD%E5%A4%9F%E8%AF%BB%E5%88%B0GT911%E8%8A%AF%E7%89%87%E7%9A%84ID%E5%8F%B7%EF%BC%88%E9%9C%80%E8%A6%81%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%EF%BC%8C%E7%9C%8B%E7%9C%8BID%E5%8F%B7%E5%9C%A8%E5%93%AA%E4%B8%AA%E5%AF%84%E5%AD%98%E5%99%A8%E9%87%8C%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">写i2c通信框架，能够读到GT911芯片的ID号（需要参考手册，看看ID号在哪个寄存器里）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E8%AE%A4%E4%B8%AD%E6%96%AD%E5%8F%91%E7%94%9F%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%88%E6%9F%A5%E8%AF%A2%E6%89%8B%E5%86%8C%EF%BC%89"><span class="nav-number">3.3.</span> <span class="nav-text">确认中断发生的方式（查询手册）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GT911%E6%9C%89%E4%B8%A4%E4%B8%AA%E5%9C%B0%E5%9D%80%E5%8F%AF%E9%80%89%EF%BC%8C%E4%BB%A5%E4%B8%8B%E6%98%AF%E6%8A%8A%E5%9C%B0%E5%9D%80%E8%AE%BE%E7%BD%AE%E4%B8%BA0x14%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E5%AF%B9%E5%BA%94%E7%9A%848%E4%BD%8D%E5%9C%B0%E5%9D%80%E6%98%AF0x28"><span class="nav-number">3.4.</span> <span class="nav-text">GT911有两个地址可选，以下是把地址设置为0x14的方法，对应的8位地址是0x28</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#g-GT911-dev-reset-gpio-gpiod-get-optional-client-dev-%E2%80%9Creset%E2%80%9D-GPIOD-OUT-LOW-%E7%94%B3%E8%AF%B7%E5%A4%B1%E8%B4%A5%EF%BC%8C%E8%BF%94%E5%9B%9E%E7%9A%84%E6%98%AFNULL%EF%BC%8C%E8%AE%BE%E5%A4%87%E6%A0%91%E4%B8%AD%E5%B7%B2%E7%BB%8F%E6%8C%87%E5%AE%9Areset-gpios"><span class="nav-number">4.1.</span> <span class="nav-text">g_GT911_dev.reset_gpio &#x3D; gpiod_get_optional(&amp;client-&gt;dev, “reset”, GPIOD_OUT_LOW);申请失败，返回的是NULL，设备树中已经指定reset-gpios &#x3D; &lt;&amp;gpio0 RK_PB6 GPIO_ACTIVE_HIGH&gt;;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%80%E4%B8%AA%E5%BC%95%E8%84%9A%E8%A2%AB%E5%A4%8D%E4%BD%8D%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88%E5%8A%9F%E8%83%BD%E5%91%A2%EF%BC%9F"><span class="nav-number">4.2.</span> <span class="nav-text">怎么查看某一个引脚被复位成了什么功能呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%B8%80%E5%9C%A8%E8%AE%BE%E5%A4%87%E6%A0%91%E4%B8%AD%E6%B7%BB%E5%8A%A0-irq-gpios-%EF%BC%8C%E5%B0%B1%E6%97%A0%E6%B3%95%E8%BF%9B%E8%A1%8Cprobe%E5%87%BD%E6%95%B0%E4%BA%86%EF%BC%9F%E6%97%A0%E6%B3%95%E5%92%8C%E9%A9%B1%E5%8A%A8%E8%BF%9B%E8%A1%8C%E5%8C%B9%E9%85%8D"><span class="nav-number">4.3.</span> <span class="nav-text">为什么我一在设备树中添加 irq-gpios   &#x3D; &lt;&amp;gpio0 RK_PB5 GPIO_ACTIVE_HIGH&gt;;，就无法进行probe函数了？无法和驱动进行匹配</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,16 +222,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://example.com/2026/02/09/2026-2-9-GT911%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,13 +246,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Koala's blogs">
+      <meta itemprop="name" content="GT911在RK3568上的调试记录 | Koala's blogs">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/02/09/2026-2-9-GT911%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">GT911在RK3568上的调试记录</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          GT911在RK3568上的调试记录
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -290,8 +305,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="GT911重要寄存器"><a href="#GT911重要寄存器" class="headerlink" title="GT911重要寄存器"></a>GT911重要寄存器</h1><p>控制寄存器：0x8040</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="GT911重要寄存器"><a href="#GT911重要寄存器" class="headerlink" title="GT911重要寄存器"></a>GT911重要寄存器</h1><p>控制寄存器：0x8040</p>
 <p>配置寄存器（组）：0x8047-0x8100</p>
 <p>状态寄存器：0x814E</p>
 <p>坐标寄存器（组）：0x8150-0x8177</p>
@@ -349,7 +363,6 @@
 </ol>
 <p><img src="../images\89656ed88d1429a0269da6c95307b599.png" alt="89656ed88d1429a0269da6c95307b599" style="zoom: 50%;" /><img src="../images\ee6bce70b3cca6b9ee704f9ad5332714.png" alt="ee6bce70b3cca6b9ee704f9ad5332714" style="zoom:33%;" /></p>
 
-      
     </div>
 
     
@@ -357,319 +370,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/I2C/" rel="tag"># I2C</a>
+          </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2026/02/09/2026-2-9-input%E5%AD%90%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="考拉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Koala's blogs">
-      <meta itemprop="description" content="山雾之中，有一个老头在磨石，孤零零的，一个人">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Koala's blogs">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/02/09/2026-2-9-input%E5%AD%90%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">input子系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2026-02-09 11:34:10 / 修改时间：11:35:36" itemprop="dateCreated datePublished" datetime="2026-02-09T11:34:10+08:00">2026-02-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux-I2C%E9%A9%B1%E5%8A%A8/" itemprop="url" rel="index"><span itemprop="name">Linux I2C驱动</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>输入子系统-input关键数据结构</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">input_dev</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">const</span> <span class="type">char</span> *name;					<span class="comment">// 设备名字（需要）</span></span><br><span class="line">	<span class="type">const</span> <span class="type">char</span> *phys;					<span class="comment">// 设备的物理路径名字？（不重要）</span></span><br><span class="line">	<span class="type">const</span> <span class="type">char</span> *uniq;					<span class="comment">// 设备的唯一标识符（不重要）</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">input_id</span> <span class="title">id</span>;</span>					<span class="comment">// 设备ID（不重要）</span></span><br><span class="line"></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> propbit[BITS_TO_LONGS(INPUT_PROP_CNT)];	<span class="comment">// 设备属性位图（比较复杂）</span></span><br><span class="line"></span><br><span class="line">    	<span class="comment">/* 表示这个设备能够上报哪些类型的事件，使用前需要提前配置好 */</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> evbit[BITS_TO_LONGS(EV_CNT)];		<span class="comment">// 事件类型位图（重要）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> keybit[BITS_TO_LONGS(KEY_CNT)];		<span class="comment">// 事件码位图（重要）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> relbit[BITS_TO_LONGS(REL_CNT)];		<span class="comment">// 相对坐标事件码位图（如何使用？）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> absbit[BITS_TO_LONGS(ABS_CNT)];		<span class="comment">// 绝对坐标事件码（重要）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> mscbit[BITS_TO_LONGS(MSC_CNT)];		<span class="comment">// 杂项事件位图（如何使用？）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> ledbit[BITS_TO_LONGS(LED_CNT)];		<span class="comment">// LED指示灯位图（如何使用？）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> sndbit[BITS_TO_LONGS(SND_CNT)];		<span class="comment">// 声音事件位图（如何使用？）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> ffbit[BITS_TO_LONGS(FF_CNT)];		<span class="comment">// 力反馈事件位图（游戏手柄震动？）</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> swbit[BITS_TO_LONGS(SW_CNT)];		<span class="comment">// 开关事件位图（重要）</span></span><br><span class="line"></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">input_absinfo</span> *<span class="title">absinfo</span>;</span>				<span class="comment">// 绝对坐标事件的信息配置</span></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">input_mt</span> *<span class="title">mt</span>;</span>					<span class="comment">// 用于多点触摸管理</span></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">device</span> <span class="title">dev</span>;</span>					<span class="comment">// 表示input框架所绑定的物理输入设备</span></span><br><span class="line">    </span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> key[BITS_TO_LONGS(KEY_CNT)];		<span class="comment">// 按键状态位图，描述按键是否按下</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> led[BITS_TO_LONGS(LED_CNT)];		<span class="comment">// 同理</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> snd[BITS_TO_LONGS(SND_CNT)];		<span class="comment">// 同理</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> sw[BITS_TO_LONGS(SW_CNT)];		<span class="comment">// 同理</span></span><br><span class="line">    </span><br><span class="line">	<span class="comment">/* 内核自动管理，APP使用 */</span></span><br><span class="line">	<span class="type">int</span> (*open)(<span class="keyword">struct</span> input_dev *dev);</span><br><span class="line">	<span class="type">void</span> (*close)(<span class="keyword">struct</span> input_dev *dev);</span><br><span class="line">	<span class="type">int</span> (*flush)(<span class="keyword">struct</span> input_dev *dev, <span class="keyword">struct</span> file *file);</span><br><span class="line">	<span class="type">int</span> (*event)(<span class="keyword">struct</span> input_dev *dev, <span class="type">unsigned</span> <span class="type">int</span> type, <span class="type">unsigned</span> <span class="type">int</span> code, <span class="type">int</span> value);</span><br><span class="line">    <span class="comment">/*********************以下不是特别重要，大部分属于内核自动管理*******************/</span></span><br><span class="line">    .......</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2026/02/05/2026-2-8-usb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="考拉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Koala's blogs">
-      <meta itemprop="description" content="山雾之中，有一个老头在磨石，孤零零的，一个人">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Koala's blogs">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/02/05/2026-2-8-usb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">USB基础知识</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-02-05 19:23:10" itemprop="dateCreated datePublished" datetime="2026-02-05T19:23:10+08:00">2026-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-02-08 22:03:03" itemprop="dateModified" datetime="2026-02-08T22:03:03+08:00">2026-02-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux-USB%E9%A9%B1%E5%8A%A8/" itemprop="url" rel="index"><span itemprop="name">Linux USB驱动</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>460</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="设备枚举阶段-usb设备插入电脑后会做的事情"><a href="#设备枚举阶段-usb设备插入电脑后会做的事情" class="headerlink" title="设备枚举阶段-usb设备插入电脑后会做的事情"></a>设备枚举阶段-usb设备插入电脑后会做的事情</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/02/05/2026-2-8-usb%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2026/01/26/2026-1-26-I2C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="考拉">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Koala's blogs">
-      <meta itemprop="description" content="山雾之中，有一个老头在磨石，孤零零的，一个人">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Koala's blogs">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/01/26/2026-1-26-I2C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">I2C基础知识</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-01-26 12:25:10" itemprop="dateCreated datePublished" datetime="2026-01-26T12:25:10+08:00">2026-01-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-02-09 11:32:17" itemprop="dateModified" datetime="2026-02-09T11:32:17+08:00">2026-02-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux-I2C%E9%A9%B1%E5%8A%A8/" itemprop="url" rel="index"><span itemprop="name">Linux I2C驱动</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="简述I2C总线的基本原理。-提示：两线制、同步、半双工、多主多从、地址寻址"><a href="#简述I2C总线的基本原理。-提示：两线制、同步、半双工、多主多从、地址寻址" class="headerlink" title="简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)"></a><em>简述I2C总线的基本原理。 (提示：两线制、同步、半双工、多主多从、地址寻址)</em></h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2026/01/26/2026-1-26-I2C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/02/09/2026-2-9-input%E5%AD%90%E7%B3%BB%E7%BB%9F/" rel="prev" title="input子系统">
+                  <i class="fa fa-angle-left"></i> input子系统
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
